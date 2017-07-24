@@ -1,0 +1,65 @@
+<!Doctype html5>
+<html ng-app="manager">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Centre Manager</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="http://turing.centre.edu/~michael.bradshaw/js/angular.js"></script>
+    <script src="http://turing.centre.edu/~michael.bradshaw/js/angular-route.js"> </script>
+    <script src="https://www.jordanturley.com/softeng/object_fix.js"></script>
+    <script src="index.js"></script>
+</head>
+<body ng-view>
+    
+    
+    
+    <script>
+        //tab function for container page
+        function openCity(evt, tab) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName("li_tab");
+          for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < x.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" yellow", "");
+          }
+          document.getElementById(tab).style.display = "block";
+          evt.currentTarget.className += " yellow";
+        }
+        
+        //tab function for login/signup
+        function openForm(evt, tab) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName("li_tab");
+          for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < x.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" yellow", "");
+          }
+          document.getElementById(tab).style.display = "block";
+          evt.currentTarget.className += " yellow";
+        }
+        
+        //tab function for teacher groups view
+        function opentab(evt, liName, tablink, tab) {
+          var i, x, tablinks;
+          x = document.getElementsByClassName(tab);
+          for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName(tablink);
+          for (i = 0; i < x.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace("w3-gray", "");
+          }
+          document.getElementById(liName).style.display = "block";
+          evt.currentTarget.className += " w3-gray";
+        }
+    </script>
+</body>
+</html>

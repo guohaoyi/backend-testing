@@ -1,0 +1,227 @@
+ [
+            {
+                student: {
+                    grade: "B - 85%"
+                },
+                teacher:{
+                    grade: "A - 93%"
+                },
+                assignments: [
+                    {
+                        title: "Design Login",
+                        indicator: "D",
+                        due: "1",
+                        color: "",
+                        description: "One of the most common ways to design a Web page is by using a CSS template. A WordPress theme is a common type of CSS template; other CSS templates can be used for all sorts of Web pages (not just WordPress sites). Scores of sites offer thousands of free CSS templates for you to copy, edit and use as your own; most of them are licensed with some form of Creative Commons license that you must respect. CSS Template is a good pair of search keywords, as is WordPress Theme.",
+                        group: ["JB", "MH", "RA", "+4"],
+                        g: true,
+                        grade: "95",
+                        pcomplete: "100%",
+                        question: [
+                            {
+                                q: "How are you doing today professor?",
+                                student: "student",
+                                prof: ""
+                            }
+                        ]
+                    },
+                    {
+                        title: "Code Login",
+                        indicator: "D",
+                        due: "3",
+                        color: "",
+                        description: "The link to each of the following problems is located on the Moodle course page. On each web page, there is a link to a diagram showing the data layout for each database. Open each document and print. For each problem, identify the obvious entities in each structure, create the conceptual schema and normalize to create a relational database structure. Construct each conceptual schema using the program, Visio. Use the online tutorial (link is on the syllabus) about Visio to learn to create the conceptual schema.",
+                        group: ["CT", "UV", "JS"],
+                        g: true,
+                        grade: "88",
+                        pcomplete: "85.7%"
+                    },
+                    {
+                        title: "Home Page",
+                        indicator: "P",
+                        due: "5",
+                        color: "",
+                        description: "Homepages are kind of like digital welcome signs that greet people when they visit your site. Having a beautiful design isn’t enough – if you want to keep visitors glued to your website, you need to have a homepage that functions as an uninterrupted environment for them. Here are the basic elements for creating a homepage that draws visitors in deeper.",
+                        group: ["CT", "UV", "JS"],
+                        g: true,
+                        grade: "85",
+                        pcomplete: "10.7%"
+                    },
+                    {
+                        title: "Logout Page",
+                        indicator: "P",
+                        due: "7",
+                        color: "yellow",
+                        description: "We now have a login page. We're processing login attempts. …We're marking admins as being logged in and we're confirming that admins have …that mark stored in the session before we give them back protected pages. …There's just one last thing that we need to take care of which is allowing admins …to log out. To do that we're going to create a new page. …Instead of login.php it's going to be logout.php. …I'm just going to go to Text Mate and open a brand new page with nothing in it.",
+                        group: ["AS", "DF", "GH", "+4"],
+                        g: true,
+                        grade: "93",
+                        pcomplete: "89.3%"
+                    },
+                    {
+                        title: "Node Server",
+                        indicator: "P",
+                        due: "9",
+                        color: "red",
+                        description: "Within a vast computer network, the individual computers on the periphery of the network, those that do not also connect other networks, and those that often connect transiently to one or more clouds are called end nodes. Typically, within the cloud computing construct, the individual user / customer computer that connects into one well-managed cloud is called an end node. Since these computers are a part of the network yet unmanaged by the cloud's host, they present significant risks to the entire cloud.",
+                        group: ["YT", "RE", "WI", "+1"],
+                        g: false,
+                        submit: true,
+                        pcomplete: "35.7%"
+                    },
+                    {
+                        title: "Express Lib",
+                        indicator: "P",
+                        due: "11",
+                        color: "yellow",
+                        description: "Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It is the de facto standard server framework for Node.js. It is relatively minimal with many features available as plugins. Express is the backend part of the MEAN stack, together with MongoDB database and AngularJS frontend framework.",
+                        group: ["SA", "DS", "FD", "+3"],
+                        g: false,
+                        submit: true,
+                        pcomplete: "82.3%"
+                    },
+                    {
+                        title: "MongoJS",
+                        indicator: "I",
+                        due: "15",
+                        color: "red",
+                        description: "MongoDB (from humongous) is a free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemas. MongoDB is developed by MongoDB Inc. and is free and open-source, published under a combination of the GNU Affero General Public License and the Apache License.",
+                        group: ["CT", "DF", "RE", "+2"],
+                        g: false,
+                        submit: false,
+                        pcomplete: "96.4%"
+                    },
+                    {
+                        title: "Profile Page",
+                        indicator: "I",
+                        due: "15",
+                        color: "red",
+                        description: "In this tutorial I want to demonstrate how we can build a minimal user profile layout design. This is mostly centered around a small set of navigation links, which dynamically change the display between bits of content. Depending on the purpose of your website, these content sections may be split to include photos, videos, followers, and other related information. To get an idea of what we’re building take a peek at my live sample demo.",
+                        group: ["SA", "WI", "GH", "+1"],
+                        g: false,
+                        submit: false,
+                        pcomplete: "90.3%"
+                    },
+                    {
+                        title: "Form Valid",
+                        indicator: "I",
+                        due: "15",
+                        color: "red",
+                        description: "Syntax – the form – is contrasted with semantics – the meaning. In processing computer languages, semantic processing generally comes after syntactic processing, but in some cases semantic processing is necessary for complete syntactic analysis, and these are done together or concurrently. In a compiler, the syntactic analysis comprises the frontend, while semantic analysis comprises the backend (and middle end, if this phase is distinguished).",
+                        group: ["JS", "UV", "CT", "+1"],
+                        g: false,
+                        submit: false,
+                        pcomplete: "20%"
+                    },
+                    {
+                        title: "Encrypt",
+                        indicator: "I",
+                        due: "15",
+                        color: "red",
+                        description: "In cryptography, encryption is the process of encoding messages or information in such a way that only authorized parties can access it. Encryption does not of itself prevent interference, but denies the intelligible content to a would-be interceptor. In an encryption scheme, the intended information or message, referred to as plaintext, is encrypted using an encryption algorithm, generating ciphertext that can only be read if decrypted. For technical reasons, an encryption scheme usually uses a pseudo-random encryption key generated by an algorithm. It is in principle possible to decrypt the message without possessing the key, but, for a well-designed encryption scheme, large computational resources and skill are required. An authorized recipient can easily decrypt the message with the key provided by the originator to recipients but not to unauthorized users.",
+                        group: ["RA", "MH", "YT", "+1"],
+                        g: false,
+                        submit: false,
+                        pcomplete: "10%"
+                    }
+                ],
+                users: [
+                    {
+                        name: "Josh Boldt",
+                        bio: "My opinions may have changed, but not the fact that I’m right. I’m not crazy, my reality is just different than yours. I always learn from mistakes of others who take my advice",
+                        initial: "JB",
+                        tasks: ["Design Login", "Code Login", "Encrypt"]
+                    },
+                    {
+                        name: "Morgan Hites",
+                        bio: "Don’t follow me because I don’t even know where I’m going. At last I graduated…….Now thermometer is not the only thing in the world having degrees without brains. Recommended by 4 out of 5 people that recommend things.",
+                        initial: "MH",
+                        tasks: ["Design Login", "Encrypt", "Express Lib", "MongoJS"]
+                    },
+                    {
+                        name: "Ryland Atkins",
+                        bio: "Contributing To Entropy Since 1992. Everyone on this earth is self-centered, the difference is the radius.",
+                        initial: "RA",
+                        tasks: ["Design Login", "Code Login", "Home Page", "Encrypt"]
+                    },
+                    {
+                        name: "Joe Blake",
+                        bio: "People of my age are busy with Relation, break up, heart break, patch ups and I am still figuring out a way to wake up before 10 am. I am so poor,i cant even pay attention. The best of me is yet to come. There are two kinds of people in this world… And I don´t like them",
+                        initial: "JB",
+                        tasks: ["Encrypt", "Code Login", "Home Page", "Express Lib"]
+                    },
+                    {
+                        name: "Jamie Sam",
+                        bio: "Professional procrastinator. Analogue at birth, digital by design",
+                        initial: "JS",
+                        tasks: ["Design Login", "Encrypt", "Express Lib", "MongoJS"]
+                    },
+                    {
+                        name: "Catherine Tuttery",
+                        bio: "Camping is intents. Chocolate doesn’t ask questions, chocolate understands. Coffee-Drinker, eReader Addict, Blogger. I’m very busy and awesome",
+                        initial: "CT",
+                        tasks: ["Design Login", "Code Login", "Encrypt"]
+                    },
+                    {
+                        name: "Ursella Vladas",
+                        bio: "Perfect has 7 letters and so does meeeeee. Coincidence? I think not. Please insert pretentious crap about myself here.",
+                        initial: "UV",
+                        tasks: ["Design Login", "Code Login", "Encrypt", "MongoJS"]
+                    },
+                    {
+                        name: "Ashish Safandi",
+                        bio: "My relationship status? Netflix, Oreos and sweatpants. Naturally and artificially flavored. Nice guys finish lunch.",
+                        initial: "AS",
+                        tasks: ["Design Login", "Code Login", "MongoJS"]
+                    },
+                    {
+                        name: "Derkon Flopot",
+                        bio: "My hobbies are breakfast, lunch, and dinner. My life is about as organized as the $5 DVD bin at Wal-Mart. My life was changed by a train.",
+                        initial: "DF",
+                        tasks: ["Design Login", "Code Login", "Home Page"]
+                    },
+                    {
+                        name: "Gogh Hamlet",
+                        bio: "Living vicariously through myself. Making the Snuggie look good since 2009. Mama said life is like a box of chocolates, you never know what your gonna get",
+                        initial: "GH",
+                        tasks: ["Design Login", "Code Login", "Form Valid", "Express Lib"]
+                    },
+                    {
+                        name: "Savannah Atkinson",
+                        bio: "I put the hot in psychotic. I recently gave up Warcraft so my productivity, and drinking, have increased dramatically.",
+                        initial: "SA",
+                        tasks: ["Design Login", "Form Valid"]
+                    },
+                    {
+                        name: "Doplilia Servius",
+                        bio: "I hope one day I love something the way women in commercials love yogurt. I looked at my Instagram photos and realized I look beautiful. I once sneezed a beanie weenie through my nose. I also made a horse faint in Costa Rica. I only rap caucasionally. I prefer my puns intended",
+                        initial: "DS",
+                        tasks: ["Form Valid", "Code Login", "MongoJS"]
+                    },
+                    {
+                        name: "Ford Doofilius",
+                        bio: "I am coming back to face the reality that a normal day is not beer on the beach or calamari in the belly. I can quote (Insert movie) better than you and all your friends. I Can’t remember who I stole my bio from or why. I have not lost my mind – it’s backed up on HD somewhere.",
+                        initial: "FD",
+                        tasks: ["Design Login", "Code Login", "MongoJS"]
+                    },
+                    {
+                        name: "Rememma Etea",
+                        bio: "Have lots of hair and like ugly things. Here to serve…. the cat overlord. I always feel sad for seedless watermelons, because what if they wanted babies?",
+                        initial: "RE",
+                        tasks: ["Design Login", "Code Login", "Home Page", "Form Valid"]
+                    },
+                    {
+                        name: "Yolandi Tevessa",
+                        bio: "enerally, the path of least resistance appeals. Also, I am excellent at parallel parking. God bless this hot mess. Good Samaritan, washed-up athlete, especially gifted napper.",
+                        initial: "YT",
+                        tasks: ["Design Login", "Code Login"]
+                    },
+                    {
+                        name: "Wiley Ioti",
+                        bio: "Eating a whole apple core because you can’t be bothered going to the bin, admit it, you’ve done it. Every storm runs out of rain. Fabulous ends in “us” coincidence? I think not",
+                        initial: "WI",
+                        tasks: ["Home Page", "Design Login", "Code Login", "Form Valid", "Express Lib", "MongoJS"]
+                    }
+                ]
+            }
+        ];

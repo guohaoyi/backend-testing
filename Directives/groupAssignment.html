@@ -1,0 +1,12 @@
+<h2 id="h2">Group Assignments</h2>
+<div class="g_assign">
+<div class="asg_item" ng-repeat="homework in assignments | limitTo: 8">
+    <p>{{homework.title}}</p>
+    <div class="members">
+        <div class="g_member" ng-repeat="mem in homework.group"><a href="#!/profile/{{mem}}">{{mem}}</a></div>
+    </div>
+    <div class="view">
+        <a href="#!/{{link}}/{{homework.title}}">View</a>
+    </div>
+</div>
+</div>

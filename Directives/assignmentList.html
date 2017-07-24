@@ -1,0 +1,25 @@
+<h2 id="h3">Assignments</h2>
+            <div class="today" id="today">
+    <h3 id="h3">Today</h3>
+    <div>
+        <ol>
+            <li ng-repeat="homework in assignments | homeworkfilter: 'today'"><a href="#!/{{link}}/{{homework.title}}">{{homework.title}}</a> &#40;High&#41;</li>
+        </ol>
+    </div>
+</div>
+<div class="today" id="tomorrow">
+    <h3 id="h3">Tomorrow</h3>
+    <div>
+        <ol>
+            <li ng-repeat="homework in assignments | homeworkfilter: 'tomorrow'"><a href="#!/{{link}}/{{homework.title}}">{{homework.title}}</a> &#40;moderate&#41;</li>
+        </ol>
+    </div>
+</div>
+<div class="today" id="future">
+    <h3 id="h3">Future</h3>
+    <div>
+        <ol>
+            <li ng-repeat="homework in assignments | homeworkfilter: 'future'"><a href="#!/{{link}}/{{homework.title}}">{{homework.title}}</a> &#40;Low&#41;</li>
+        </ol>
+    </div>
+</div>

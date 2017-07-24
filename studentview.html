@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="student.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<ul class="w3-navbar w3-black">
+    <li ng-click="gotoStudent()" class="w3-navitem"><i class="fa fa-home"></i> Centre Manager</li>
+    <li class="w3-dropdown-hover w3-hover-gray right">
+      <a class="w3-hover-gray" href="#">{{loggedIn}} <i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-white w3-card-4">
+        <a href="#!/profile/{{loggedIn}}">Profile</a>
+        <a href="#!/">Log Out</a>
+      </div>
+    </li>
+</ul>
+    
+<div id="page_content" class="w3-container">
+  <ul class="w3-navbar">
+    <li><a href="javascript:void(0)" class="tablink yellow" onclick="openCity(event, 'Home');">Home</a></li>
+    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Groups');">Groups</a></li>
+    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Grades');">Grades</a></li>
+    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Assignments');">Assignments</a></li>
+  </ul>
+
+  <div id="Home" class="w3-container w3-border li_tab">
+    <div class="fl-left">
+        <div>
+            <h2 id="h2">Assignments</h2>
+            <div>
+                <div class="list-item">
+                    <ol>
+                        <li ng-repeat="homework in assignments | limitTo:6">{{homework.title}}
+                        </li>
+                    </ol>
+                </div>
+                <div class="list-details">
+                    <ol>
+                        <li ng-repeat="homework in assignments | limitTo:6">
+                            <div class="grade {{homework.color}}">
+                                {{homework.indicator}}
+                            </div>
+                            <p class="description">Due in {{homework.due}} days</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="list-view">
+                    <div class="list_view_item" ng-repeat="homework in assignments | limitTo:6">
+                        <a href="#!/assignment/{{homework.title}}">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div home-group-assign assignments="assignments" link="assignment" mxAssignments={{maxNumAssignments}}></div>
+    </div>
+    <div class="fl-right">
+        <div>
+            <grade-directive grade="grade" type="Grade"></grade-directive>
+        </div>
+        <div>
+            <h2 id="h2">Calendar</h2>
+            <div></div>
+        </div>
+    </div>
+  </div>
+
+  <div id="Groups" class="w3-container w3-border li_tab" style="display:none">
+      <div class="group-fl-left">
+        <div group-assignment assignments="assignments" link="assignment">
+        </div>
+      </div>
+      <div class="group-fl-right">
+        <div>
+            <h2 id="h3">Group Members</h2> 
+            <div>
+                <div class="search"><input ng-model="userSearch" placeholder="Search..."></div>
+                <div class="s_g_mem_cont" ng-repeat="mem in users | filter : userSearch | limitTo:4">
+                    <div>
+                        <p class="none ellipse" title="{{mem.name}}">{{mem.name}}</p>
+                        <div class="view2">
+                            <a href="#!/profile/{{mem.name}}">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        <div id="ass_g_mem" action-box title="Report" create="Create Report" complete="Complete Report" icon="plus" icon1="trash" click="click" action="review"></div>
+      </div>
+    </div>
+
+  <div id="Grades" class="w3-container w3-border li_tab" style="display:none">
+      <div class="group-fl-left">
+        <div>
+              <h2 id="h2">Grades</h2>
+              <div class="grade_assign">
+                <div>
+                    <h3 id="h3">Graded</h3>
+                    <div id="asg_item" class="asg_item" ng-repeat="homework in assignments | filter: {g: true}">
+                        <p>{{homework.title}}</p>
+                        <p>{{homework.grade | gradeFilter}}</p>
+                        <div class="view">
+                            <a href="#!/assignment/{{homework.title}}">View</a>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 id="h3">Submitted</h3>
+                     <div id="asg_item" class="asg_item" ng-repeat="homework in assignments | filter: {submit: true, g: false}">
+                        <p>{{homework.title}}</p>
+                        <p>{{homework.grade}}</p>
+                        <div class="view">
+                            <a href="#!/assignment/{{homework.title}}">View</a>
+                        </div>
+                    </div>
+                    <h3 id="h3">Uncompleted</h3>
+                     <div id="asg_item" class="asg_item" ng-repeat="homework in assignments | filter: {submit: false}">
+                        <p>{{homework.title}}</p>
+                        <p>{{homework.grade}}</p>
+                        <div class="view">
+                            <a href="#!/assignment/{{homework.title}}">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="group-fl-right">
+        <div class="g_container">
+            <grade-directive type="Grade" grade="grade"></grade-directive>
+        </div>
+        <div id="ass_g_mem" action-box title="Inquiries" create="Create Inquiries" complete="Complete Inquiries" icon="plus" icon1="envelope-open"></div>
+      </div>
+  </div>
+
+  <div id="Assignments" class="w3-container w3-border li_tab" style="display:none">
+    <div id="student_assign" class="group-fl-left assign_tab">
+        <div assignment-list assignments="assignments" link="assignment"></div>  
+    </div>
+  </div>
+</div>

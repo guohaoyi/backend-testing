@@ -1,0 +1,343 @@
+<link rel="stylesheet" href="teacher.css">
+<ul class="w3-navbar w3-black">
+    <li ng-click="gotoTeacher()" class="w3-navitem"><i class="fa fa-home"></i> Centre Manager</li>
+    <li class="w3-dropdown-hover w3-hover-gray right">
+      <a class="w3-hover-gray" href="#">{{loggedIn}} <i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-white w3-card-4">
+        <a href="#!/">Log Out</a>
+      </div>
+    </li>
+</ul>
+
+<div id="page_content" class="w3-container">
+  <ul class="w3-navbar">
+    <li><a href="javascript:void(0)" class="tablink yellow" onclick="openCity(event, 'Home');">Home</a></li>
+    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Groups');">Groups</a></li>
+    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Grades');">Grades</a></li>
+    <li><a href="javascript:void(0)" class="tablink" onclick="openCity(event, 'Assignments');">Assignments</a></li>
+  </ul>
+
+<div id="Home" class="w3-container w3-border li_tab">
+    <div class="fl-left">
+        <div>
+            <h2 id="h2">Assignments</h2>
+            <div>
+                <div class="list-item">
+                    <ol>
+                        <li ng-repeat="homework in assignments">
+                        <a href="#!/tassignment/{{homework.title}}">{{homework.title}}</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="list-details">
+                    <p>Percentage of Class Completed</p>
+                    <ol>
+                        <li ng-repeat="homework in assignments">
+                            <div class="grade {{homework.color}}">
+                                {{homework.indicator}}
+                            </div>
+                            <p class="description">--  {{homework.pcomplete}}</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div home-group-assign assignments="assignments" link="tassignment"></div>
+    </div>
+    <div class="fl-right">
+        <div class="teacherviewFl_right">
+            <grade-directive grade="tgrade" type="Average"></grade-directive>
+        </div>
+        <div>
+            <h2 id="h2">Calendar</h2>
+            <div></div>
+        </div>
+    </div>
+  </div>
+
+<div id="Groups" class="w3-container w3-border li_tab" style="display:none">
+      <div class="group-fl-left">
+        <div>
+              <h2 id="h2">Groups</h2>
+              <div>
+                <div class="group-tab">
+                     <div class="g1">
+                        <p class="yellow_light">Group 1</p>
+                        <ul class="w3-navbar">
+                            <li><a href="javascript:void(0)" class="gtablink w3-gray" onclick="opentab(event, 'members', 'gtablink', 'g_tab');">Members</a></li>
+                            <li><a href="javascript:void(0)" class="gtablink" onclick="opentab(event, 'tasks', 'gtablink', 'g_tab');">Tasks</a></li>
+                          </ul>
+                         <div id="members" class="g_tab">
+                             <ol>
+                                <li>
+                                    <p class="username">Joe Blake</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Ryland Atkins</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Morgan Hites</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Josh Boldt</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Boe Jake</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Cyrus Normm</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                             </ol>
+                         </div>
+                         <div id="tasks" class="g_tab" style="display:none">
+                             <ol>
+                                <li>
+                                    <p class="username">Design Program</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Code Design</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Design 2</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Revisions</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                             </ol>
+                         </div>
+                     </div>
+                     <div class="g2">
+                        <p class="yellow_light">Group 2</p>
+                        <ul class="w3-navbar">
+                            <li><a href="javascript:void(0)" class="gtablink2 w3-gray" onclick="opentab(event, 'members2', 'gtablink2', 'g_tab2');">Members</a></li>
+                            <li><a href="javascript:void(0)" class="gtablink2" onclick="opentab(event, 'tasks2', 'gtablink2', 'g_tab2');">Tasks</a></li>
+                          </ul>
+                         <div id="members2" class="g_tab2">
+                             <ol>
+                                <li>
+                                    <p class="username">Yussif Hamis</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Ty David</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Errol Lucky</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Alphonzo Leroy</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Inigo Les</p>
+                                     <div class="view1">
+                                        View
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Alec Tony</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                             </ol>
+                         </div>
+                         <div id="tasks2" class="g_tab2" style="display:none">
+                             <ol>
+                                <li>
+                                    <p class="username">Design Program</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Code Design</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Design 2</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Revisions</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                             </ol>
+                         </div>
+                     </div>
+                     <div class="g3">
+                        <p class="yellow_light">Group 3</p>
+                        <ul class="w3-navbar">
+                            <li><a href="javascript:void(0)" class="gtablink3 w3-gray" onclick="opentab(event, 'members3', 'gtablink3', 'g_tab3');">Members</a></li>
+                            <li><a href="javascript:void(0)" class="gtablink3" onclick="opentab(event, 'tasks3', 'gtablink3', 'g_tab3');">Tasks</a></li>
+                          </ul>
+                         <div id="members3" class="g_tab3">
+                             <ol>
+                                <li>
+                                    <p class="username">Bob Rickie</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Irvine Beau</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Rowan Allan</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Jemmy Vinal</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Alfred Colbert</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Monte Denis</p>
+                                     <div class="view1">
+                                        <a href="t_profile.html">View</a>
+                                     </div>
+                                </li>
+                             </ol>
+                         </div>
+                         <div id="tasks3" class="g_tab3" style="display:none">
+                             <ol>
+                                <li>
+                                    <p class="username">Design Program</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Code Design</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Design 2</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                                <li>
+                                    <p class="username">Revisions</p>
+                                     <div class="view1">
+                                        <a href="t_homework.html">View</a>
+                                     </div>
+                                </li>
+                             </ol>
+                         </div>
+                     </div>
+
+                </div>
+              </div>
+        </div>
+      </div>
+      <div class="group-fl-right">
+        <div id="ass_g_mem" action-box title="Management" create="Create Group" complete="Archive Group" icon="plus" icon1="trash"></div>
+      </div>
+  </div>
+
+<div id="Grades" class="w3-container w3-border li_tab" style="display:none">
+    <div class="group-fl-left">
+        <div group-assignment assignments="assignments" link="tassignment" limit="8">
+        </div>
+    </div>
+    <div class="group-fl-right">
+      <div id="ass_g_mem" action-box title="Inquiries" create="Create Inquiries" complete="Complete Inquiries" icon="plus" icon1="envelope-open"></div>
+    </div>
+  </div>
+
+<div id="Assignments" class="w3-container w3-border li_tab" style="display:none">
+    <div class="group-fl-left assign_tab">
+        <div assignment-list assignments="assignments" link="tassignment"></div>  
+    </div>
+    <div class="group-fl-right1">
+        <div>
+            <h2 id="h3">Create</h2>
+            <ol>
+                <li>
+                    <h3>Teammate report low</h3>
+                    <p>Group 1</p>
+                    <p>Group 2</p>
+                    <p>Group 3</p>
+                    <p>Group 4</p>
+                </li>
+                <li>
+                    <h3>Final project report 2 &#40;High&#41;</h3>
+                    <p>Group 1</p>
+                    <p>Group 2</p>
+                    <p>Group 3</p>
+                    <p>Group 4</p>
+                </li>
+                <li>
+                    <h3>JS hw #5 &#40;Moderate&#41;</h3>
+                    <p>Group 1</p>
+                    <p>Group 2</p>
+                    <p>Group 3</p>
+                    <p>Group 4</p>
+                </li>
+            </ol>
+            <div class="add_assign"><i class="fa fa-add"></i><a href="#!/tassignment/new">Add Assignment</a></div>
+        </div>  
+    </div>
+  </div>
+</div>

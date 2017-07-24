@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="profile.css">    
+<ul class="w3-navbar w3-black">
+    <li class="navv w3-navitem"><i class="fa fa-home"></i> Centre Manager</li>
+    <li class="w3-dropdown-hover w3-hover-gray right">
+      <a class="w3-hover-gray" href="#">{{loggedIn}} <i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#!/">Log Out</a>
+      </div>
+    </li>
+</ul>
+<div id="page_content">
+    <div class="inner">
+        <h2 class="yellow">{{name}}</h2>
+        <div class="profile">
+            <div class="bio">
+                <p class="title">Biography</p>
+                <p class="bio_text">{{bio}}</p>
+            </div>
+            <div class="profile_pic">
+                <div class="circle">{{initial}}</div>
+            </div>
+        </div>
+        <div class="current">
+            <p class="c_title">Current Tasks</p>
+            <div ng-repeat="task in tasks">
+                <a href="#!/{{assignmentRoute}}/{{task}}">{{task}}</a>
+            </div>
+        </div>
+        <div class="contact">Contact</div>
+    </div>
+</div>

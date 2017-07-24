@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="homework.css">
+<ul class="w3-navbar w3-black">
+        <li ng-click="gotoStudent()" class="navv w3-navitem"><i class="fa fa-home"></i> Centre Manager</li>
+        <li class="w3-dropdown-hover w3-hover-gray right">
+          <a class="w3-hover-gray" href="#">{{loggedIn}} <i class="fa fa-caret-down"></i></a>
+          <div class="w3-dropdown-content w3-white w3-card-4">
+            <a href="#!/profile/{{loggedIn}}">Profile</a>
+            <a href="#!/">Log Out</a>
+          </div>
+        </li>
+    </ul>
+    <div id="page_content">
+        <div class="inner">
+            <h2 class="yellow">{{title}}</h2>
+            <div class="yellow_light"><h3>Due in {{due}} days</h3></div>
+            
+            
+            <div ng-hide="hideforQ" class="text_contain">
+                <div class="header">
+                    <p>Instructions</p>
+                    <div ng-click="askQ('hideforQ')" class="ask"><p>ASK QUESTION</p></div>
+                </div>
+                <p>{{description}}</p>
+            </div>
+            
+            <div ng-show="hideforQ" class="text_contain listQuestions">
+                <div class="header">
+                    <p>Questions</p>
+                    <div ng-click="doneQ('student')" class="ask"><p>done</p></div>
+                </div>
+                <div class="chatContainer">
+                    <div class="asg_item" ng-repeat="question in questions">
+                            <p ng-class="{ 'teachermsg': question.student, 'studentmsg': question.prof}">{{question.q}}</p>
+                    </div>
+                </div>
+                <div id="space"></div>
+                <div class="inputAns">
+                    <form>
+                        <textarea ng-enter="sendMessage(qVal, 'student')" ng-model="qVal" placeholder="Reply to questions here..."></textarea>
+                    </form>
+                </div>
+            </div>
+
+            
+            
+            
+            <div ng-hide="hideforQ" class="buttonContainer">
+                <div class="grade">
+                    <div class="gradeTitle">Grade</div>
+                    <div class="gradenum">{{assignmentGrade}}%</div>
+                </div>
+                <div class="editSub">
+                    <a href="https://drive.google.com/drive/folders/0B1kZ7_cHDvnGREdtWXVpVXctUkE?usp=sharing">View/Edit Submission</a>
+                </div>
+            </div>
+            <div ng-hide="hideforQ" class="submit">
+                <a href="#!/student">Submit</a>
+            </div>
+        </div>
+    </div>

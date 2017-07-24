@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="login.css">
+<div class="form-wrapper">        
+        <div class="form-heading">
+            <div class="logo">
+                <img src="centre.jpg">
+            </div>
+            <p class="salutation">Good morning, please</p>
+            <p>login or sign up</p>
+        </div>
+        
+        <div class="inner-form">
+            <ul class="w3-navbar">
+            <li><a href="javascript:void(0)" class="tablink yellow" onclick="openForm(event, 'login');">Login</a></li>
+            <li><a href="javascript:void(0)" class="tablink" onclick="openForm(event, 'signup');">Sign Up</a></li>
+            </ul>
+
+
+            <div id="login" class="w3-container li_tab">
+                <form name="mlogin" ng-submit="loginsubmit()">
+                    <div class="form-row">
+                        <input name="email" ng-model="email" placeholder="&#xf0e0;  Email" type="email" ng-class="{'invalid': mlogin.email.$touched && mlogin.email.$invalid}" required>
+                    </div>
+                    <div class="form-row">
+                       <input name="password" placeholder="&#xf023;  Password" ng-model="password" type="password" ng-class="{'invalid': mlogin.password.$touched && mlogin.password.$invalid}" required>
+                    </div>
+                    <button class="buttons">Login</button>
+                    <div ng-click="forgot()" class="forgot">Forgot email or password?</div>
+                </form>
+                <div class="msg w3-text-red" ng-show="loginError">Account not found</div>
+            </div>
+
+            <div id="signup" class="w3-container li_tab" style="display:none">
+                <form name="msignup" ng-submit="signupsubmit()">
+                    <div class="form-row">
+                        <input type="text" placeholder="&#xf007;   First Name" name="fname" ng-model="fname" ng-class="{'invalid': msignup.fname.$touched && msignup.fname.$invalid}" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="&#xf007;   Last Name" name="lname" ng-model="lname" ng-class="{'invalid': msignup.lname.$touched && msignup.lname.$invalid}" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="email" placeholder="&#xf0e0;  Email" name="email" ng-model="semail" ng-class="{'invalid': msignup.email.$touched && msignup.email.$invalid}" required>
+                    </div>
+                    <div class="form-row">
+                       <input type="password" placeholder="&#xf023;   Password" name="password" ng-model="spassword" ng-class="{'invalid': msignup.password.$touched && msignup.password.$invalid}" required>
+                    </div>
+                    <div class="form-row">
+                        <select class="select" ng-model="userType" name="userType" ng-class="{'invalid': msignup.userType.$touched && msignup.userType.$invalid}" ng-options="c.user for c in selectUsers" required>
+                        </select>
+                    </div>
+                    <button class="buttons yellow">Sign Up</button>
+                </form>
+                <div class="msg w3-text-red" ng-show="signUpError">Account already exists</div>
+                <div class="msg w3-text-blue" ng-show="signUpOk">Account creation successful</div>
+                <div class="msg w3-text-red" ng-show="nulltype">Please select user type</div>
+            </div>
+        </div>
+</div>

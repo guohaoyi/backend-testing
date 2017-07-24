@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="t_homework.css">
+<ul class="w3-navbar w3-black">
+    <li ng-click="gotoTeacher()" class="navv w3-navitem"><i class="fa fa-home"></i> Centre Manager</li>
+    <li class="w3-dropdown-hover w3-hover-gray right">
+      <a class="w3-hover-gray" href="#">Prof. Brad <i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-white w3-card-4">
+        <a href="#!/">Log Out</a>
+      </div>
+    </li>
+</ul>
+<div id="page_content">
+    <div class="inner">
+        <h2 class="yellow" ng-hide="editH">{{title}} <span><i class="fa fa-pencil" ng-click="add('h')"></i></span></h2>
+        <h2 class="yellow" ng-show="editH"><input ng-model="editedTexth"> <span><i class="fa fa-check" ng-click="done('h',editedTexth)"></i></span></h2>
+        <div ng-hide="editDue" class="yellow_light"><h3>Due in {{due}} days</h3></div>
+        <div ng-show="editDue" class="yellow_light"><h3>Due in <input ng-model="editDueVal" class="inputDue"> days</h3></div>
+        <div ng-hide="thideforQ" class="text_contain">
+            <div class="header">
+                <p>Instructions</p>
+                <div ng-click="askQ('thideforQ')" class="ask"><p>VIEW QUESTIONS</p></div>
+            </div>
+            <p ng-hide="edit" class="inputh">{{description}} <span><i class="fa fa-pencil" ng-click="add('body')"></i></span></p>
+            <div class="inputh" ng-show="edit">
+                <textarea class="texth" ng-model="editedText">{{description}}</textarea>
+                <div class="done" ng-click="done('body',editedText)">Done</div>
+            </div>
+        </div>
+        <div ng-show="thideforQ" class="text_contain listQuestions">
+            <div class="header">
+                <p>Questions</p>
+                <div ng-click="doneQ('teacher')" class="ask"><p>done</p></div>
+            </div>
+            <div class="chatContainer">
+                <div class="asg_item" ng-repeat="question in questions">
+                        <p ng-class="{ 'studentmsg': question.student, 'teachermsg': question.prof}">{{question.q}}</p>
+                </div>
+            </div>
+            <div id="space"></div>
+            <div class="inputAns">
+                <form>
+                    <textarea ng-enter="sendMessage(ansQval, 'teacher')" ng-model="ansQval" placeholder="Reply to questions here..."></textarea>
+                </form>
+            </div>
+        </div>
+        <div ng-hide="thideforQ" class="buttonContainer">
+            <div class="grade">
+                <div class="gradeTitle">Grade</div>
+                <div class="gradenum" ng-hide="assignGrade" ng-click="add('grade')">{{assignmentGrade}}%</div>
+                <div class="gradenum" ng-show="assignGrade">
+                    <input class="gradenum_input" ng-model="assignGradeVal">
+                    <span><i class="fa fa-check gradenum_check" ng-click="done('grade',assignGradeVal)"></i></span>
+                </div>
+            </div>
+            <div class="editSub">
+                <a href="https://drive.google.com/drive/folders/0B1kZ7_cHDvnGREdtWXVpVXctUkE?usp=sharing">View/Edit Submission</a>
+            </div>
+        </div>
+        <div ng-hide="thideforQ" ng-click="createAssign(editedTexth, editDueVal, editedText)" class="submit">
+            <a href="#!/teacher">Submit</a>
+        </div>
+    </div>
+</div>
